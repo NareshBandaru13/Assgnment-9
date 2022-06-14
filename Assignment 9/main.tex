@@ -1,0 +1,75 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+
+\def\inputGnumericTable{}
+
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}
+\usepackage{caption}
+
+\title{AI1110 \\ Assignment 9}
+\author{Bandaru Naresh Kumar \\ AI21BTECH11006}
+\date{}
+\begin{document}
+	% The title page
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% The table of contents
+	\begin{frame}{Outline}
+    		\tableofcontents
+	\end{frame}
+	
+	% The question
+	\section{Question}
+	\begin{frame}{Exercise 10.25}
+       If $R_n(\tau) = N\delta(\tau)$ and\\
+       $x(t) = A\cos\omega_0t + n(t)$\\
+       $H(\omega) = \dfrac{1}{\alpha+j\omega}$\\
+       $y(t) = B\cos(\omega_0 +t +\phi) + y_n(t)$\\
+       where $y_n(t)$ is the component of the output y(t) due to n(t), find the value of $\alpha$ that maximises the signal to noise ratio $\dfrac{B^2}{E(y_n^2(t))}$
+	\end{frame}
+	
+	% The solution
+	\section{Solution}
+	\begin{frame}{Solution}
+	    We have,\\
+	    \begin{align}
+	    B &= A|H(\omega_0)| = \dfrac{A}{\sqrt{\alpha^2+\omega_0^2}}\\
+	    S_{y_n}(\omega) &= \dfrac{N}{\alpha^2+\omega_0^2}\\
+	    R_{y_n}(\tau) &= \dfrac{N}{2\alpha e^{-\alpha|\tau|}}\\
+	    E{y_n^2(t)} &= R_{y_n}(0) = \dfrac{N}{2\alpha}
+	    \end{align}
+	 \end{frame}
+	 
+	 % The final answer
+	\section{Answer}
+	\begin{frame}{Answer}
+	   Hence,\\
+	    $\dfrac{B^2}{E(y_n^2(t))} = \dfrac{2A^2}{N}\dfrac{\alpha}{\alpha^2+\omega_0^2}$\\
+	Differentiating, we get
+	\begin{align}
+	\dfrac{1(\alpha^2+\omega_0^2)-\alpha(2\alpha)}{(\alpha^2+\omega_0^2)^2} &= 0\\
+	\omega_0^2 - \alpha^2 &= 0\\
+	\alpha &= \omega_0 
+	\end{align}
+	Also,$f^{\prime\prime}(\alpha)<0$\\
+	$\therefore\alpha = \omega_0$ is the maxima value for given             ratio.
+	\end{frame}
+\end{document}
